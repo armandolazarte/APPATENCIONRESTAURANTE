@@ -5,6 +5,7 @@
 	<title>Document</title>
 </head>
 <body>
-	<h1>Hola mundo</h1>
+	<h1>Login</h1>
+	<a href="/APPATENCIONRESTAURANTE/public/venta/insertar">Ir a ventas</a>
 </body>
 </html>

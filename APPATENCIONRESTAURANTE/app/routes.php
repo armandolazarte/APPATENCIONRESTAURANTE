@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+/*USUARIO*/
+Route::any('/', 'UsuarioController@actionLogin');
+Route::any('/usuario/login', 'UsuarioController@actionLogin');
+
+/*VENTA*/
+Route::any('/venta/insertar', 'VentaController@actionInsertar');

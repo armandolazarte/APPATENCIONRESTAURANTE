@@ -1,0 +1,20 @@
+footer
+{
+	background-color: #EEEEEE;
+	height: 70px;
+	width: 100%;
+}
+
+header
+{
+	background-color: #EEEEEE;
+	height: 100px;
+	width: 100%;
+}
+
+#cuerpoTemplate
+{
+	background-color: #F5F5F5;
+	min-height: 450px;
+	width: auto;
+}
