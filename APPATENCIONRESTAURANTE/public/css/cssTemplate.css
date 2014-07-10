@@ -1,20 +1,96 @@
+body
+{
+	background-color: #E5E5E5;
+	font-size: 14px;
+}
+
 footer
 {
-	background-color: #EEEEEE;
-	height: 70px;
-	width: 100%;
+	background-color: #F5F5F5;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
+	margin-bottom: 7px;
+	margin-left: 7px;
+	margin-right: 7px;
+	min-height: 70px;
+	padding-top: 10px;
+	width: auto;
+}
+
+h1
+{
+	text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.7);
+	color: white;
+	margin: 0px;
+	padding: 0px;
 }
 
 header
 {
-	background-color: #EEEEEE;
+	background-color: #1570A6;
+	background-image: url('/APPATENCIONRESTAURANTE/public/img/imgCabecera.png');
+	box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.7);
+	display: inline-table;
+	font-size: 14px;
 	height: 100px;
+	left: 0px;
+	position: fixed;
+	right: 0px;
+	top: 0px;
+}
+
+#contenedorHeader
+{
+	display: table-cell;
+	vertical-align: middle;
 	width: 100%;
+}
+
+#contenidoFooter
+{
+	margin-left: 7px;
+	margin-right: 7px;
+	width: auto;
+}
+
+#cuerpoInterno
+{
+	margin-left: 7px;
+	margin-right: 7px;
+	width: auto;
 }
 
 #cuerpoTemplate
 {
-	background-color: #F5F5F5;
+	background-color: white;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
+	margin-bottom: 7px;
+	margin-left: 7px;
+	margin-right: 7px;
+	margin-top: 105px;
 	min-height: 450px;
+	padding-top: 10px;
 	width: auto;
+}
+
+#divLogin
+{
+	color: white;
+	position: fixed;
+	right: 110px;
+	text-align: right;
+	top: 10px;
+}
+
+#divLogin a
+{
+	color: white;
+}
+
+#divLogo
+{
+	background-color: white;
+	border-radius: 5px 5px 5px 5px;
+	border-right: 5px solid #B84343;
+	box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.7);
+	overflow: hidden;
 }
