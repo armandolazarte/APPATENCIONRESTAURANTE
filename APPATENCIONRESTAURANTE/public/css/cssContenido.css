@@ -1,6 +1,69 @@
+.anchoCompleto
+{
+	width: 100%;
+}
+
+.backGroundColorGrisClaro
+{
+	background-color: #F2F1F0;
+}
+
+.bordeArriba
+{
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bordeAbajo
+{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contenidoBottom
+{
+	display: inline-block;
+	margin: 4px;
+	vertical-align: bottom;
+}
+
 .contenidoMiddle
 {
 	display: inline-block;
 	margin: 4px;
 	vertical-align: middle;
+}
+
+.contenidoTop
+{
+	display: inline-block;
+	margin: 4px;
+	vertical-align: top;
+}
+
+.displayInlineBlock
+{
+	display: inline-block;
+}
+
+.textAlignCenter
+{
+	text-align: center;
+}
+
+.textAlignLeft
+{
+	text-align: left;
+}
+
+.textAlignRight
+{
+	text-align: right;
+}
+
+.titulo
+{
+	background-color: #1570A6;
+	color: white;
+	font-size: 22px;
+	text-align: center;
+	width: 100%;
 }

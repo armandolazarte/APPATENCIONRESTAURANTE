@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssTemplate.css">
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssContenido.css">
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssMenuPrincipal.css">
+	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssFormulario.css">
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/jquery-ui.css">
 
 	<script src="/APPATENCIONRESTAURANTE/public/js/jquery-2.0.3.min.js"></script>
@@ -35,10 +36,10 @@
 				<li>
 					<a href="#">
 						<img src="/APPATENCIONRESTAURANTE/public/img/imgMenu/itemUsuario.png">
-						<div>Item 1</div>
+						<div>Módulo de usuarios</div>
 					</a>
 					<ul>
-						<li><a href="#">Sub item 1.1</a></li>
+						<li><a href="/APPATENCIONRESTAURANTE/public/usuario/insertar">Registrar usuario</a></li>
 					</ul>
 				</li><li>
 					<a href="#">

@@ -14,6 +14,7 @@
 /*USUARIO*/
 Route::any('/', 'UsuarioController@actionLogin');
 Route::any('/usuario/login', 'UsuarioController@actionLogin');
+Route::any('/usuario/insertar', 'UsuarioController@actionInsertar');
 
 /*VENTA*/
 Route::any('/venta/insertar', 'VentaController@actionInsertar');
