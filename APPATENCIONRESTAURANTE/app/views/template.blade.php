@@ -14,6 +14,8 @@
 	<script src="/APPATENCIONRESTAURANTE/public/js/jquery-2.0.3.min.js"></script>
 	<script src="/APPATENCIONRESTAURANTE/public/js/jquery-ui.js"></script>
 	<script src="/APPATENCIONRESTAURANTE/public/js/prefixfree.min.js"></script>
+	<script src="/APPATENCIONRESTAURANTE/public/js/jsValidacion.js"></script>
+	<script src="/APPATENCIONRESTAURANTE/public/js/jsAnimacion.js"></script>
 </head>
 <body>
 	<header>
@@ -65,6 +67,13 @@
 		</nav>
 	</header>
 	<section id="cuerpoTemplate">
+		<div class="alertaMensajeGlobal"></div>
+		@if(isset($alertaMensajeGlobal))
+			<script>animacionAlertaMensajeGeneral('{{$alertaMensajeGlobal}}', 'red');</script>
+		@endif
+		@if(isset($correcto))
+			<script>animacionAlertaMensajeGeneral('{{$correcto}}', '#2B71A2');</script>
+		@endif
 		<div id="cuerpoInterno">
 			@yield('sectionCuerpo')
 		</div>

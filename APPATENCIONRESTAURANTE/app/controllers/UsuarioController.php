@@ -10,6 +10,38 @@ class UsuarioController extends BaseController
 	{
 		if($_POST)
 		{
+			$alertaMensajeGlobal='';
+
+			$validator=Validator::make
+			(
+				[
+					'dni' => Input::get('txtDni'),
+					'correoElectronico' => Input::get('txtCorreoElectronico')
+				],
+				[
+					'dni' => 'unique:TUsuario',
+					'correoElectronico' => 'unique:TUsuario'
+				]
+			);
+
+			if($validator->fails())
+			{
+				if($validator->messages()->first('dni')!='')
+				{
+					$alertaMensajeGlobal.='Dni existente en el sistema<br>';
+				}
+
+				if($validator->messages()->first('correoElectronico')!='')
+				{
+					$alertaMensajeGlobal.='Correo electrónico existente en el sistema<br>';
+				}
+			}
+
+			if($alertaMensajeGlobal!='')
+			{
+				return View::make('usuario/insertar', Input::all(), ['alertaMensajeGlobal' => $alertaMensajeGlobal]);
+			}
+
 			$tUsuario=new TUsuario;
 
 			$tUsuario->nombre=Input::get('txtNombre');
@@ -22,7 +54,7 @@ class UsuarioController extends BaseController
 
 			$tUsuario->save();
 
-			return View::make('usuario/insertar');
+			return View::make('usuario/insertar', ['correcto' => 'Operacion realizada correctamente']);
 		}
 		
 		return View::make('usuario/insertar');
