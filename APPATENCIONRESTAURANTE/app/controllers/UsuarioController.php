@@ -59,5 +59,48 @@ class UsuarioController extends BaseController
 		
 		return View::make('usuario/insertar');
 	}
+
+	public function actionVer()
+	{
+		$listaTUsuario=TUsuario::all();
+
+		return View::make('usuario/ver', ['listaTUsuario' => $listaTUsuario]);
+	}
+
+	public function actionEditar($codigoUsuario=null)
+	{
+		if($_POST)
+		{
+			$alertaMensajeGlobal='';
+
+			if(TUsuario::whereRaw('codigoUsuario!=? and (dni=? or correoElectronico=?)', [Input::get('txtCodigoUsuario'), Input::get('txtDni'), Input::get('txtCorreoElectronico')])->count()>0)
+			{
+				$alertaMensajeGlobal.='Usuario existente en el sistema<br>';
+			}
+
+			if($alertaMensajeGlobal!='')
+			{
+				return View::make('usuario/editar', Input::all(), ['alertaMensajeGlobal' => $alertaMensajeGlobal]);
+			}
+
+			$tUsuario=TUsuario::find(Input::get('txtCodigoUsuario'));
+
+			$tUsuario->nombre=Input::get('txtNombre');
+			$tUsuario->apellido=Input::get('txtApellido');
+			$tUsuario->dni=Input::get('txtDni');
+			$tUsuario->fechaNacimiento=Input::get('txtFechaNacimiento');
+			$tUsuario->correoElectronico=Input::get('txtCorreoElectronico');
+			$tUsuario->rol=Input::get('cbxRol');
+
+			$tUsuario->save();
+
+			return Redirect::to('usuario/ver');
+
+		}
+
+		$tUsuario=TUsuario::find($codigoUsuario);
+
+		return View::make('usuario/editar', ['tUsuario' => $tUsuario]);
+	}
 }
 ?>

@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssContenido.css">
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssMenuPrincipal.css">
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssFormulario.css">
+	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssComponente.css">
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/jquery-ui.css">
 
 	<script src="/APPATENCIONRESTAURANTE/public/js/jquery-2.0.3.min.js"></script>
@@ -42,6 +43,7 @@
 					</a>
 					<ul>
 						<li><a href="/APPATENCIONRESTAURANTE/public/usuario/insertar">Registrar usuario</a></li>
+						<li><a href="/APPATENCIONRESTAURANTE/public/usuario/ver">Ver usuarios</a></li>
 					</ul>
 				</li><li>
 					<a href="#">
