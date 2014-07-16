@@ -26,12 +26,12 @@
 		</div>
 		<div id="divLogin">
 			<b class="contenidoMiddle">Nombre del usuario actual: </b>
-			<div class="contenidoMiddle">Kevin Arnold Arias Figueroa</div>
+			<div class="contenidoMiddle">{{Session::get('correoElectronico')}}</div>
 			<br>
 			<b class="contenidoMiddle">Fecha actual del sistema: </b>
 			<div class="contenidoMiddle">10-07-2014</div>
 			<br>
-			<div class="contenidoMiddle"><a href="#">Cerrar Sesión</a></div>
+			<div class="contenidoMiddle"><a href="/APPATENCIONRESTAURANTE/public/usuario/cerrarsesion">Cerrar Sesión</a></div>
 		</div>
 		<div id="itemMenu"><div>Menú</div></div>
 		<nav id="menuPrincipal">

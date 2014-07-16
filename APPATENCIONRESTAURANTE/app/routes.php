@@ -14,6 +14,7 @@
 /*USUARIO*/
 Route::any('/', 'UsuarioController@actionLogin');
 Route::any('/usuario/login', 'UsuarioController@actionLogin');
+Route::get('/usuario/cerrarsesion', 'UsuarioController@actionCerrarSesion');
 Route::any('/usuario/insertar', 'UsuarioController@actionInsertar');
 Route::get('/usuario/ver', 'UsuarioController@actionVer');
 Route::any('/usuario/editar/{codigoUsuario?}', 'UsuarioController@actionEditar');

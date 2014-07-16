@@ -3,9 +3,51 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+
+	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/normalize.css">
+	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssContenido.css">
+	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssFormulario.css">
+	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssComponente.css">
+
+	<script src="/APPATENCIONRESTAURANTE/public/js/jquery-2.0.3.min.js"></script>
+	<script src="/APPATENCIONRESTAURANTE/public/js/prefixfree.min.js"></script>
+	<script src="/APPATENCIONRESTAURANTE/public/js/jsAnimacion.js"></script>
+
+	<style>
+		.alertaMensajeGlobal
+		{
+			bottom: 0px;
+			box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
+			color: white;
+			font-size: 15px;
+			left: 0px;
+			padding-bottom: 7px;
+			padding-top: 7px;
+			position: fixed;
+			right: 0px;
+			text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
+		}
+	</style>
 </head>
-<body>
-	<h1>Login</h1>
-	<a href="/APPATENCIONRESTAURANTE/public/venta/insertar">Ir a ventas</a>
+<body style="text-align: center;">
+	<div class="alertaMensajeGlobal"></div>
+	@if(isset($alertaMensajeGlobal))
+		<script>animacionAlertaMensajeGeneral('{{$alertaMensajeGlobal}}', 'red');</script>
+	@endif
+	<div class="displayInlineBlock" style="margin-top: 170px;">
+		<form action="/APPATENCIONRESTAURANTE/public/usuario/login" method="post" class="formulario labelPequenio">
+			<div class="tituloFormulario textAlignCenter">Acceso de usuario</div>
+			<div class="contenidoTop textAlignLeft">
+				<label for="txtCorreoElectronico">Correo electrónico</label>
+				<input type="text" id="txtCorreoElectronico" name="txtCorreoElectronico">
+				<br>
+				<label for="txtContrasenia">Contraseña</label>
+				<input type="password" id="txtContrasenia" name="txtContrasenia">
+			</div>
+			<div class="seccionBotones bordeArriba">
+				<input type="submit" value="Acceder">
+			</div>
+		</form>
+	</div>
 </body>
 </html>

@@ -3,7 +3,44 @@ class UsuarioController extends BaseController
 {
 	public function actionLogin()
 	{
+		if($_POST)
+		{
+			$tUsuario=TUsuario::whereRaw('correoElectronico=?', [Input::get('txtCorreoElectronico')])->get();
+
+			if(count($tUsuario)==0)
+			{
+				return View::make('usuario/login', ['alertaMensajeGlobal' => 'Usuario o contraseña incorrecto']);
+			}
+			else
+			{
+				if(Crypt::decrypt($tUsuario[0]->contrasenia)==Input::get('txtContrasenia'))
+				{
+					Session::put('correoElectronico', $tUsuario[0]->correoElectronico);
+					Session::put('codigoUsuario', $tUsuario[0]->codigoUsuario);
+
+					return Redirect::to('venta/insertar');
+				}
+				else
+				{
+					return View::make('usuario/login', ['alertaMensajeGlobal' => 'Usuario o contraseña incorrecto']);
+				}
+			}
+		}
+
+		if(Session::has('sesionVacia'))
+		{
+			return View::make('usuario/login', ['alertaMensajeGlobal' => Session::get('sesionVacia')]);
+		}
+
 		return View::make('usuario/login');
+	}
+
+	public function actionCerrarSesion()
+	{
+		Session::forget('correoElectronico');
+		Session::forget('codigoUsuario');
+
+		return Redirect::to('usuario/login');
 	}
 
 	public function actionInsertar()

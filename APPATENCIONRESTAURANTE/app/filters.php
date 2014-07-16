@@ -13,7 +13,10 @@
 
 App::before(function($request)
 {
-	//
+	if(Request::url()!='http://localhost/APPATENCIONRESTAURANTE/public/usuario/login' && !Session::has('correoElectronico'))
+	{
+		return Redirect::to('usuario/login')->with('sesionVacia', 'Primero debe iniciar sesión');
+	}
 });
 
 
