@@ -9,7 +9,7 @@ class UsuarioController extends BaseController
 
 			if(count($tUsuario)==0)
 			{
-				return View::make('usuario/login', ['alertaMensajeGlobal' => 'Usuario o contraseña incorrecto']);
+				return View::make('usuario/login', ['color' => 'red', 'alertaMensajeGlobal' => 'Usuario o contraseña incorrecto']);
 			}
 			else
 			{
@@ -22,14 +22,14 @@ class UsuarioController extends BaseController
 				}
 				else
 				{
-					return View::make('usuario/login', ['alertaMensajeGlobal' => 'Usuario o contraseña incorrecto']);
+					return View::make('usuario/login', ['color' => 'red', 'alertaMensajeGlobal' => 'Usuario o contraseña incorrecto']);
 				}
 			}
 		}
 
 		if(Session::has('sesionVacia'))
 		{
-			return View::make('usuario/login', ['alertaMensajeGlobal' => Session::get('sesionVacia')]);
+			return View::make('usuario/login', ['color' => 'red', 'alertaMensajeGlobal' => Session::get('sesionVacia')]);
 		}
 
 		return View::make('usuario/login');
@@ -76,7 +76,7 @@ class UsuarioController extends BaseController
 
 			if($alertaMensajeGlobal!='')
 			{
-				return View::make('usuario/insertar', Input::all(), ['alertaMensajeGlobal' => $alertaMensajeGlobal]);
+				return View::make('usuario/insertar', Input::all(), ['color' => 'red', 'alertaMensajeGlobal' => $alertaMensajeGlobal]);
 			}
 
 			$tUsuario=new TUsuario;
@@ -91,7 +91,7 @@ class UsuarioController extends BaseController
 
 			$tUsuario->save();
 
-			return View::make('usuario/insertar', ['correcto' => 'Operacion realizada correctamente']);
+			return View::make('usuario/insertar', ['color' => '#3D89BB', 'alertaMensajeGlobal' => 'Operación realizada correctamente']);
 		}
 		
 		return View::make('usuario/insertar');
@@ -104,9 +104,9 @@ class UsuarioController extends BaseController
 		return View::make('usuario/ver', ['listaTUsuario' => $listaTUsuario]);
 	}
 
-	public function actionEditar($codigoUsuario=null)
+	public function actionEditar()
 	{
-		if($_POST)
+		if(Input::has('txtCodigoUsuario'))
 		{
 			$alertaMensajeGlobal='';
 
@@ -117,7 +117,9 @@ class UsuarioController extends BaseController
 
 			if($alertaMensajeGlobal!='')
 			{
-				return View::make('usuario/editar', Input::all(), ['alertaMensajeGlobal' => $alertaMensajeGlobal]);
+				$listaTUsuario=TUsuario::all();
+
+				return View::make('usuario/ver', Input::all(), ['color' => 'red', 'alertaMensajeGlobal' => $alertaMensajeGlobal, 'listaTUsuario' => $listaTUsuario]);
 			}
 
 			$tUsuario=TUsuario::find(Input::get('txtCodigoUsuario'));
@@ -131,11 +133,13 @@ class UsuarioController extends BaseController
 
 			$tUsuario->save();
 
-			return Redirect::to('usuario/ver');
+			$listaTUsuario=TUsuario::all();
+
+			return View::make('usuario/ver', ['color' => '#3D89BB', 'alertaMensajeGlobal' => 'Operación realizada correctamente', 'listaTUsuario' => $listaTUsuario]);
 
 		}
 
-		$tUsuario=TUsuario::find($codigoUsuario);
+		$tUsuario=TUsuario::find(Input::get('codigo'));
 
 		return View::make('usuario/editar', ['tUsuario' => $tUsuario]);
 	}

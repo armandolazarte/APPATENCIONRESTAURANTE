@@ -6,17 +6,23 @@
 
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/normalize.css">
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssTemplate.css">
-	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssContenido.css">
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssMenuPrincipal.css">
-	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssFormulario.css">
+	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssContenido.css">
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssComponente.css">
+	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssFormulario.css">
+	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssLoading.css">
+	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/cssDragAndDrop.css">
 	<link rel="stylesheet" href="/APPATENCIONRESTAURANTE/public/css/jquery-ui.css">
 
 	<script src="/APPATENCIONRESTAURANTE/public/js/jquery-2.0.3.min.js"></script>
 	<script src="/APPATENCIONRESTAURANTE/public/js/jquery-ui.js"></script>
 	<script src="/APPATENCIONRESTAURANTE/public/js/prefixfree.min.js"></script>
+	<script src="/APPATENCIONRESTAURANTE/public/js/jsAccion.js"></script>
+	<script src="/APPATENCIONRESTAURANTE/public/js/jsAjax.js"></script>
 	<script src="/APPATENCIONRESTAURANTE/public/js/jsValidacion.js"></script>
 	<script src="/APPATENCIONRESTAURANTE/public/js/jsAnimacion.js"></script>
+	<script src="/APPATENCIONRESTAURANTE/public/js/jsBuscar.js"></script>
+	<script src="/APPATENCIONRESTAURANTE/public/js/jsControl.js"></script>
 </head>
 <body>
 	<header>
@@ -29,7 +35,7 @@
 			<div class="contenidoMiddle">{{Session::get('correoElectronico')}}</div>
 			<br>
 			<b class="contenidoMiddle">Fecha actual del sistema: </b>
-			<div class="contenidoMiddle">10-07-2014</div>
+			<div class="contenidoMiddle">{{date('Y-m-d')}}</div>
 			<br>
 			<div class="contenidoMiddle"><a href="/APPATENCIONRESTAURANTE/public/usuario/cerrarsesion">Cerrar Sesión</a></div>
 		</div>
@@ -70,11 +76,10 @@
 	</header>
 	<section id="cuerpoTemplate">
 		<div class="alertaMensajeGlobal"></div>
-		@if(isset($alertaMensajeGlobal))
-			<script>animacionAlertaMensajeGeneral('{{$alertaMensajeGlobal}}', 'red');</script>
-		@endif
-		@if(isset($correcto))
-			<script>animacionAlertaMensajeGeneral('{{$correcto}}', '#2B71A2');</script>
+		<div id="divVerDetalle"></div>
+		<div id="dialogo"></div>
+		@if(isset($alertaMensajeGlobal) && $alertaMensajeGlobal!='')
+		    <script>animacionAlertaMensajeGeneral('{{$alertaMensajeGlobal}}', '{{$color}}');</script>
 		@endif
 		<div id="cuerpoInterno">
 			@yield('sectionCuerpo')

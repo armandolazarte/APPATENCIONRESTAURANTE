@@ -12,27 +12,12 @@
 	<script src="/APPATENCIONRESTAURANTE/public/js/jquery-2.0.3.min.js"></script>
 	<script src="/APPATENCIONRESTAURANTE/public/js/prefixfree.min.js"></script>
 	<script src="/APPATENCIONRESTAURANTE/public/js/jsAnimacion.js"></script>
-
-	<style>
-		.alertaMensajeGlobal
-		{
-			bottom: 0px;
-			box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
-			color: white;
-			font-size: 15px;
-			left: 0px;
-			padding-bottom: 7px;
-			padding-top: 7px;
-			position: fixed;
-			right: 0px;
-			text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
-		}
-	</style>
 </head>
 <body style="text-align: center;">
 	<div class="alertaMensajeGlobal"></div>
-	@if(isset($alertaMensajeGlobal))
-		<script>animacionAlertaMensajeGeneral('{{$alertaMensajeGlobal}}', 'red');</script>
+	<div id="divVerDetalle"></div>
+	@if(isset($alertaMensajeGlobal) && $alertaMensajeGlobal!='')
+	    <script>animacionAlertaMensajeGeneral('{{$alertaMensajeGlobal}}', '{{$color}}');</script>
 	@endif
 	<div class="displayInlineBlock" style="margin-top: 170px;">
 		<form action="/APPATENCIONRESTAURANTE/public/usuario/login" method="post" class="formulario labelPequenio">

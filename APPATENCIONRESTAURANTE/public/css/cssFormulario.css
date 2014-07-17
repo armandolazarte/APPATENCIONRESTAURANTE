@@ -81,7 +81,7 @@
 	box-shadow: 0px 0px 2px blue;
 }
 
-.formulario [readonly=readonly]
+.formulario [readonly=true]
 {
 	background-color: #EEEEEE;
 }

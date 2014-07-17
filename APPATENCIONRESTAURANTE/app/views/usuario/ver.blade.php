@@ -1,6 +1,13 @@
 @extends('template')
 @section('sectionCuerpo')
-	<table class="table">
+	<div class="textAlignLeft backGroundColorGrisClaro">
+		<div class="contenidoTop">
+			<label for="txtBuscar">Buscar</label>
+			<input type="text" id="txtBuscar" name="txtBuscar" class="text" size="50" onkeyup="buscarEnClass('buscarEnTablaUsuario', this.value)">
+		</div>
+	</div>
+	<h2 class="tituloCabecera textAlignRight">LISTA DE USUARIOS</h2>
+	<table class="table buscarEnTablaUsuario">
 		<thead>
 			<th>NOMBRES</th>
 			<th>APELLIDOS</th>
@@ -13,7 +20,7 @@
 		</thead>
 		<tbody>
 			@foreach($listaTUsuario as $item)
-				<tr>
+				<tr class="elementoBuscar">
 					<td>{{$item->nombre}}</td>
 					<td>{{$item->apellido}}</td>
 					<td>{{$item->dni}}</td>
@@ -21,15 +28,9 @@
 					<td>{{$item->correoElectronico}}</td>
 					<td>{{$item->rol=='A' ? 'Administrador' : 'Usuario Normal'}}</td>
 					<td>{{$item->fechaRegistro}}</td>
-					<td><input id="{{$item->codigoUsuario}}" type="button" value="Editar" onclick="editarUsuario(this.id);"></td>
+					<td><input id="{{$item->codigoUsuario}}" type="button" value="Editar" onclick="dialogoPorCodigo('dialogo', '600', true, 'Editar usuario', 'top', this.id, '/APPATENCIONRESTAURANTE/public/usuario/editar', 'POST', false, true);"></td>
 				</tr>
 			@endforeach
 		</tbody>
 	</table>
-	<script>
-		function editarUsuario(codigoUsuario)
-		{
-			window.location.href='/APPATENCIONRESTAURANTE/public/usuario/editar/'+codigoUsuario;
-		}
-	</script>
 @stop

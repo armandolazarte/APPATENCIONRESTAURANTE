@@ -13,3 +13,18 @@ function animacionAlertaMensajeGeneral(texto, color)
 	$(".alertaMensajeGlobal").animate({"opacity" : "0"}, 10000);
 	$(".alertaMensajeGlobal").animate({"height" : "0px"}, 0);
 }
+
+function animacionScrollMovimientoY(idElementoReferencia, topDiferencia)
+{
+	$("body").animate({scrollTop: $("#"+idElementoReferencia).offset().top+topDiferencia}, 500);
+}
+
+function mostrarApartadoBuscar()
+{
+    $('.apartadoBuscar').animate({'height': '400px'}, 500);
+}
+
+function ocultarApartadoBuscar()
+{
+    $(".apartadoBuscar").animate({"height": "0px"}, 500);
+}

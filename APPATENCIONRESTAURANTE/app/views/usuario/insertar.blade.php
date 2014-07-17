@@ -1,7 +1,8 @@
 @extends('template')
 @section('sectionCuerpo')
+	<h2 class="tituloCabecera textAlignRight">REGISTRAR USUARIO</h2>
 	<div class="displayInlineBlock">
-		<form id="frmInsertarTUsuario" action="/APPATENCIONRESTAURANTE/public/usuario/insertar" method="post" class="formulario labelMediano">
+		<form id="frmInsertarUsuario" action="/APPATENCIONRESTAURANTE/public/usuario/insertar" method="post" class="formulario labelMediano">
 			<div class="tituloFormulario textAlignCenter">Datos de usuario</div>
 			<div class="contenidoTop textAlignLeft">
 				<label for="txtNombre">Nombres</label>
@@ -32,12 +33,12 @@
 				</select>
 			</div>
 			<div class="seccionBotones bordeArriba">
-				<input type="button" value="Guardar datos" onclick="enviarFrmInsertarTUsuario();">
+				<input type="button" value="Guardar datos" onclick="enviarFrmInsertarUsuario();">
 			</div>
 		</form>
 	</div>
 	<script>
-		function enviarFrmInsertarTUsuario()
+		function enviarFrmInsertarUsuario()
 		{
 			var alertaMensajeGlobal='';
 
@@ -63,7 +64,7 @@
 
 			if(confirm('Confirmar operación'))
 			{
-				$('#frmInsertarTUsuario').submit();
+				$('#frmInsertarUsuario').submit();
 
 				return;
 			}

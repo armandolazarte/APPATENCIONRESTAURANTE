@@ -3,9 +3,19 @@
 	width: 100%;
 }
 
+.backGroundColorAzulClaro
+{
+	background-color: #5AC3EE;
+}
+
 .backGroundColorGrisClaro
 {
 	background-color: #F2F1F0;
+}
+
+.backGroundColorRojoClaro
+{
+	background-color: rgb(238, 121, 121);
 }
 
 .bordeArriba
@@ -57,13 +67,4 @@
 .textAlignRight
 {
 	text-align: right;
-}
-
-.titulo
-{
-	background-color: #1570A6;
-	color: white;
-	font-size: 22px;
-	text-align: center;
-	width: 100%;
 }
