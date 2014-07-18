@@ -54,11 +54,11 @@
 				</li><li>
 					<a href="#">
 						<img src="/APPATENCIONRESTAURANTE/public/img/imgMenu/itemUsuario.png">
-						<div>Item 2</div>
+						<div>Módulo de productos</div>
 					</a>
 					<ul>
-						<li><a href="#">Sub item 2.1</a></li>
-						<li><a href="#">Sub item 2.2</a></li>
+						<li><a href="/APPATENCIONRESTAURANTE/public/categoria/insertar">Registrar categoría</a></li>
+						<li><a href="/APPATENCIONRESTAURANTE/public/categoria/ver">Ver categorías</a></li>
 					</ul>
 				</li><li>
 					<a href="#">

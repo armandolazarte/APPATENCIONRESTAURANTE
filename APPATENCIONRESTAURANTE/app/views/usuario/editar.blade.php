@@ -19,8 +19,8 @@
 			<br>
 			<label for="cbxRol">Rol</label>
 			<select name="cbxRol" id="cbxRol">
-				<option value="A" {{(isset($tUsuario) && $tUsuario->rol=='A') ? 'selected' : ''}}>Administrador</option>
-				<option value="U" {{(isset($tUsuario) && $tUsuario->rol=='U') ? 'selected' : ''}}>Usuario normal</option>
+				<option value="A" {{($tUsuario->rol=='A') ? 'selected' : ''}}>Administrador</option>
+				<option value="U" {{($tUsuario->rol=='U') ? 'selected' : ''}}>Usuario normal</option>
 			</select>
 		</div>
 		<div class="seccionBotones bordeArriba">

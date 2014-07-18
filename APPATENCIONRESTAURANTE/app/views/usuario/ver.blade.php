@@ -1,12 +1,12 @@
 @extends('template')
 @section('sectionCuerpo')
+	<h2 class="tituloCabecera textAlignRight">LISTA DE USUARIOS</h2>
 	<div class="textAlignLeft backGroundColorGrisClaro">
 		<div class="contenidoTop">
 			<label for="txtBuscar">Buscar</label>
 			<input type="text" id="txtBuscar" name="txtBuscar" class="text" size="50" onkeyup="buscarEnClass('buscarEnTablaUsuario', this.value)">
 		</div>
 	</div>
-	<h2 class="tituloCabecera textAlignRight">LISTA DE USUARIOS</h2>
 	<table class="table buscarEnTablaUsuario">
 		<thead>
 			<th>NOMBRES</th>
