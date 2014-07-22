@@ -40,7 +40,6 @@ primary key (codigoCategoria)
 create table TProducto
 (
 codigoProducto char(15) not null,
-codigoCategoria char(15) not null,
 nombre varchar(700) not null,
 descripcion text not null,
 precioVentaUnitario decimal(8, 2) not null,
@@ -49,9 +48,21 @@ fechaVencimiento date not null,
 estado bool not null,/*true->Habilitado, false->Deshabilitado*/
 fechaRegistro timestamp not null default current_timestamp,
 fechaModificacion timestamp not null default current_timestamp on update current_timestamp,
+primary key (codigoProducto)
+);
+
+create table TProductoTCategoria
+(
+codigoProductoTCategoria char(15) not null,
+codigoProducto char(15) not null,
+codigoCategoria char(15) not null,
+fechaRegistro timestamp not null default current_timestamp,
+fechaModificacion timestamp not null default current_timestamp on update current_timestamp,
+foreign key (codigoProducto) references TProducto(codigoProducto)
+on update cascade on delete cascade,
 foreign key (codigoCategoria) references TCategoria(codigoCategoria)
 on update cascade on delete cascade,
-primary key (codigoProducto)
+primary key (codigoProductoTCategoria)
 );
 
 create table TProductoRetiro

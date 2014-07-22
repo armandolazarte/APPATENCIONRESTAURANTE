@@ -24,5 +24,8 @@ Route::any('/categoria/insertar', 'CategoriaController@actionInsertar');
 Route::get('/categoria/ver', 'CategoriaController@actionVer');
 Route::post('/categoria/editar', 'CategoriaController@actionEditar');
 
+/*PRODUCTO*/
+Route::any('/producto/insertar', 'ProductoController@actionInsertar');
+
 /*VENTA*/
 Route::any('/venta/insertar', 'VentaController@actionInsertar');

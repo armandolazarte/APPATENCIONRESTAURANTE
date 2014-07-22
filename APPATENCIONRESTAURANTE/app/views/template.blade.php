@@ -59,6 +59,7 @@
 					<ul>
 						<li><a href="/APPATENCIONRESTAURANTE/public/categoria/insertar">Registrar categoría</a></li>
 						<li><a href="/APPATENCIONRESTAURANTE/public/categoria/ver">Ver categorías</a></li>
+						<li><a href="/APPATENCIONRESTAURANTE/public/producto/insertar">Registrar productos</a></li>
 					</ul>
 				</li><li>
 					<a href="#">
