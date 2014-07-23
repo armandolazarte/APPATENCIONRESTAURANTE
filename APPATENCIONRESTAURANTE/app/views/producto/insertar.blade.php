@@ -57,7 +57,7 @@
 							</div>
 						@endforeach
 					</div>
-					<input type="hidden" id="txtArrayAsignados" name="txtArrayAsignados">
+					<input type="hidden" id="txtArrayAsignados" name="txtArrayAsignados" value="{{$txtArrayAsignados or ''}}">
 				</div>
 			</div>
 			<div class="seccionBotones bordeArriba">
@@ -66,6 +66,19 @@
 		</form>
 	</div>
 	<script>
+		$(document).on('ready', function()
+		{
+			if($('#txtArrayAsignados').val()!='')
+			{
+				var arrayCategoriaAsignada=$('#txtArrayAsignados').val().split(',');
+
+				for(var i=0; i<arrayCategoriaAsignada.length; i++)
+				{
+					trasladarHtml('contenedor2', '#'+arrayCategoriaAsignada[i], 'contenedor1');
+				}
+			}
+		});
+
 		function enviarFrmInsertarProducto()
 		{
 			var alertaMensajeGlobal='';
