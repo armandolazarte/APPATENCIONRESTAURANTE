@@ -39,6 +39,48 @@ class CategoriaController extends BaseController
 		return View::make('categoria/insertar');
 	}
 
+	public function actionInsertarConAjax()
+	{
+		if($_POST)
+		{
+			$alertaMensajeGlobal='';
+
+			$validator=Validator::make
+			(
+				[
+					'nombre' => Input::get('codigo')
+				],
+				[
+					'nombre' => 'unique:TCategoria'
+				]
+			);
+
+			if($validator->fails())
+			{
+				$alertaMensajeGlobal.='La categoría ya se encuentra registrado en el sistema<br>';
+			}
+
+			if($alertaMensajeGlobal!='')
+			{
+				$listaTCategoria=TCategoria::all();
+
+				return View::make('categoria/vercategoriaconajax', ['color' => 'red', 'alertaMensajeGlobal' => $alertaMensajeGlobal, 'listaTCategoria' => $listaTCategoria]);
+			}
+
+			$tCategoria=new TCategoria;
+
+			$tCategoria->nombre=Input::get('codigo');
+
+			$tCategoria->save();
+
+			$listaTCategoria=TCategoria::all();
+
+			return View::make('categoria/vercategoriaconajax', ['color' => '#3D89BB', 'alertaMensajeGlobal' => 'Operación realizada correctamente', 'listaTCategoria' => $listaTCategoria]);
+		}
+
+		return View::make('categoria/insertarconajax');
+	}
+
 	public function actionVer()
 	{
 		$listaTCategoria=TCategoria::all();

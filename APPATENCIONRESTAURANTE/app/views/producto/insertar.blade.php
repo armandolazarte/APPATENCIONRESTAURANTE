@@ -47,6 +47,8 @@
 				<label>Asigne categorías</label>
 				<hr>
 				<div class="textAlignCenter">
+					<input type="button" value="Registrar categoría" onclick="dialogoUrl('dialogo', 680, true, 'Datos de categoría', 'top', '/APPATENCIONRESTAURANTE/public/categoria/insertarconajax', 'GET', false, true);">
+					<hr>
 					<div id="contenedor1" class="cajonDragAndDrop">
 
 					</div>

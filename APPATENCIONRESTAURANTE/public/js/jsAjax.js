@@ -17,25 +17,25 @@ function detalleConAjaxPorCodigo(idSeccion, codigo, url, method, cache, asincron
 
 function dialogoUrl(idDialogo, anchoDialogo, modal, titulo, posicion, url, method, cache, asincrono)
 {
-$("#"+idDialogo).html("<div style='width: 100%;text-align:center;'><div id='divLoadingSuperior'></div></div>");
-$.ajax(
-{
-    url: url,
-    type: method,
-    cache: cache,
-    async: asincrono
-}).done(function(pagina) 
-{
-    $("#"+idDialogo).html(pagina);
-});
+    $("#"+idDialogo).html("<div style='width: 100%;text-align:center;'><div id='divLoadingSuperior'></div></div>");
+    $.ajax(
+    {
+        url: url,
+        type: method,
+        cache: cache,
+        async: asincrono
+    }).done(function(pagina) 
+    {
+        $("#"+idDialogo).html(pagina);
+    });
 
-$( "#"+idDialogo ).dialog(
-{
-    width: anchoDialogo,
-    modal: modal,
-    title: titulo,
-    position: {at: posicion}
-});
+    $( "#"+idDialogo ).dialog(
+    {
+        width: anchoDialogo,
+        modal: modal,
+        title: titulo,
+        position: {at: posicion}
+    });
 }
 
 function dialogoPorCodigo(idDialogo, anchoDialogo, modal, titulo, posicion, codigo, url, method, cache, asincrono)

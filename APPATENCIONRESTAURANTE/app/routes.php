@@ -21,7 +21,9 @@ Route::post('/usuario/editar', 'UsuarioController@actionEditar');
 
 /*CATEGORIA*/
 Route::any('/categoria/insertar', 'CategoriaController@actionInsertar');
+Route::any('/categoria/insertarconajax', 'CategoriaController@actionInsertarConAjax');
 Route::get('/categoria/ver', 'CategoriaController@actionVer');
+Route::post('/categoria/vercategoriaconajax', 'CategoriaController@actionVerCategoriaConAjax');
 Route::post('/categoria/editar', 'CategoriaController@actionEditar');
 
 /*PRODUCTO*/
