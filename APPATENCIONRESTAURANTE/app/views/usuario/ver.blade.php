@@ -28,7 +28,7 @@
 					<td>{{$item->correoElectronico}}</td>
 					<td>{{$item->rol=='A' ? 'Administrador' : 'Usuario Normal'}}</td>
 					<td>{{$item->fechaRegistro}}</td>
-					<td><input id="{{$item->codigoUsuario}}" type="button" value="Editar" onclick="dialogoPorCodigo('dialogo', '600', true, 'Editar usuario', 'top', this.id, '/APPATENCIONRESTAURANTE/public/usuario/editar', 'POST', false, true);"></td>
+					<td><input id="{{$item->codigoUsuario}}" type="button" value="Editar" onclick="dialogoAjax('dialogo', '600', true, 'Editar usuario', 'top', {codigo : this.id}, '/APPATENCIONRESTAURANTE/public/usuario/editar', 'POST', null, null, false, true);"></td>
 				</tr>
 			@endforeach
 		</tbody>

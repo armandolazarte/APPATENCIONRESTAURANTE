@@ -1,5 +1,5 @@
 @foreach($listaTCategoria as $item)
-	<div id="{{$item->codigoCategoria}}" class="dragAndDrop1">
+	<div id="{{$item->codigoCategoria}}" class="dragAndDrop1 elementoBuscar">
 		{{$item->nombre}}
 	</div>
 @endforeach

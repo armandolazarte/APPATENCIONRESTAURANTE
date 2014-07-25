@@ -48,7 +48,7 @@ class CategoriaController extends BaseController
 			$validator=Validator::make
 			(
 				[
-					'nombre' => Input::get('codigo')
+					'nombre' => Input::get('nombre')
 				],
 				[
 					'nombre' => 'unique:TCategoria'
@@ -69,7 +69,7 @@ class CategoriaController extends BaseController
 
 			$tCategoria=new TCategoria;
 
-			$tCategoria->nombre=Input::get('codigo');
+			$tCategoria->nombre=Input::get('nombre');
 
 			$tCategoria->save();
 

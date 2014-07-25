@@ -47,14 +47,16 @@
 				<label>Asigne categorías</label>
 				<hr>
 				<div class="textAlignCenter">
-					<input type="button" value="Registrar categoría" onclick="dialogoUrl('dialogo', 680, true, 'Datos de categoría', 'top', '/APPATENCIONRESTAURANTE/public/categoria/insertarconajax', 'GET', false, true);">
+					<input type="button" value="Registrar categoría" onclick="dialogoAjax('dialogo', 680, true, 'Datos de categoría', 'top', null, '/APPATENCIONRESTAURANTE/public/categoria/insertarconajax', 'GET', null, null, false, true);">
+					<label for="txtBuscarCategoria">Buscar categoría</label>
+					<input type="text" id="txtBuscarCategoria" name="txtBuscarCategoria" onkeyup="buscarEnClass('buscarEnCategoria', this.value)">
 					<hr>
 					<div id="contenedor1" class="cajonDragAndDrop">
 
 					</div>
-					<div id="contenedor2" class="cajonDragAndDrop">
+					<div id="contenedor2" class="cajonDragAndDrop buscarEnCategoria">
 						@foreach($listaTCategoria as $item)
-							<div id="{{$item->codigoCategoria}}" class="dragAndDrop1">
+							<div id="{{$item->codigoCategoria}}" class="dragAndDrop1 elementoBuscar">
 								{{$item->nombre}}
 							</div>
 						@endforeach

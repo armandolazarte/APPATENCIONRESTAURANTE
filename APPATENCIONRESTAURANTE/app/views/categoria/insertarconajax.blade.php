@@ -25,7 +25,7 @@
 
 		if(confirm('Confirmar operación'))
 		{
-			paginaConAjaxPorCodigo('contenedor2', $('#txtNombreCategoria').val(), '/APPATENCIONRESTAURANTE/public/categoria/insertarconajax', 'POST', null, function(){$('#txtNombreCategoria').val('');}, false, true);
+			paginaAjax('contenedor2', {nombre : $('#txtNombreCategoria').val()}, '/APPATENCIONRESTAURANTE/public/categoria/insertarconajax', 'POST', null, function(){$('#txtNombreCategoria').val('');}, false, true);
 
 			return;
 		}
