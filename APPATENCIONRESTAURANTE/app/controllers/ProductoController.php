@@ -68,5 +68,12 @@ class ProductoController extends BaseController
 
 		return View::make('producto/insertar', ['listaTCategoria' => $listaTCategoria]);
 	}
+
+	public function actionBuscarProducto()
+	{
+		$listaTProducto=TProducto::all();
+
+		return View::make('producto/buscarproducto', ['listaTProducto' => $listaTProducto]);
+	}
 }
 ?>
