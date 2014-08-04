@@ -28,6 +28,7 @@ Route::post('/categoria/editar', 'CategoriaController@actionEditar');
 
 /*PRODUCTO*/
 Route::any('/producto/insertar', 'ProductoController@actionInsertar');
+Route::post('/producto/buscarproducto', 'ProductoController@actionBuscarProducto');
 
 /*VENTA*/
 Route::any('/venta/insertar', 'VentaController@actionInsertar');

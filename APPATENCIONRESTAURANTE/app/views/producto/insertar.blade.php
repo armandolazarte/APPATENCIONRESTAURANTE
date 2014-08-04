@@ -30,7 +30,8 @@
 			<div class="tituloFormulario textAlignCenter">Datos de producto</div>
 			<div class="contenidoTop textAlignLeft">
 				<label for="txtNombre">Nombre</label>
-				<input type="text" id="txtNombre" name="txtNombre" size="50" value="{{$txtNombre or ''}}">
+				<input type="text" id="txtNombre" name="txtNombre" class="contenidoMiddle" size="50" value="{{$txtNombre or ''}}">
+				<input type="button" class="button contenidoMiddle" value="Buscar Producto" onclick="mostrarApartadoBuscar();">
 				<br>
 				<label for="txtDescripcion">Descripción</label>
 				<textarea name="txtDescripcion" id="txtDescripcion" cols="30" rows="7">{{$txtDescripcion or ''}}</textarea>
@@ -69,6 +70,13 @@
 			</div>
 		</form>
 	</div>
+	<div id="divBuscar" class="apartadoBuscar">
+		<div id="divBuscarProducto">
+			<script>
+				paginaAjax('divBuscarProducto', null, '/APPATENCIONRESTAURANTE/public/producto/buscarproducto', 'POST', null, null, false, true);
+			</script>
+		</div>
+	</div>
 	<script>
 		$(document).on('ready', function()
 		{
@@ -82,6 +90,16 @@
 				}
 			}
 		});
+
+		function seleccionarRegistroTProducto(codigo)
+		{
+			$('#txtNombre').val($('#nombreProducto'+codigo).text());
+			$('#txtDescripcion').val($('#descripcionProducto'+codigo).text());
+			$('#txtPrecioVentaUnitario').val($('#precioVentaUnitarioProducto'+codigo).text());
+			$('#txtFechaVencimiento').val($('#fechaVencimientoProducto'+codigo).text());
+
+			ocultarApartadoBuscar();
+		}
 
 		function enviarFrmInsertarProducto()
 		{
